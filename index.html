@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111827">
+    <title>MesaFlow | Gestão do restaurante</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="auth-screen" id="auth-screen" aria-live="polite"></div>
+    <div class="app-shell" id="app-shell" hidden>
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="MesaFlow, início">
+          <span class="brand-mark">M</span>
+          <span><strong>MesaFlow</strong><small>GESTÃO DO RESTAURANTE</small></span>
+        </a>
+        <div class="sidebar-label">OPERAÇÃO</div>
+        <nav class="main-nav" aria-label="Navegação principal">
+          <button class="nav-link active" data-page="dashboard"><span class="nav-icon">⌂</span>Visão geral</button>
+          <button class="nav-link" data-page="orders"><span class="nav-icon">▤</span>Pedidos <span class="nav-count" id="orders-count">0</span></button>
+          <button class="nav-link" data-page="tables"><span class="nav-icon">▦</span>Mesas e comandas</button>
+          <button class="nav-link" data-page="kitchen"><span class="nav-icon">◷</span>Cozinha (KDS)</button>
+          <button class="nav-link" data-page="cashier"><span class="nav-icon">▣</span>Caixa</button>
+        </nav>
+        <div class="sidebar-label menu-label">GESTÃO</div>
+        <nav class="main-nav" aria-label="Gestão">
+          <button class="nav-link" data-page="menu"><span class="nav-icon">☷</span>Cardápio</button>
+          <button class="nav-link" data-page="inventory"><span class="nav-icon">◫</span>Estoque</button>
+          <button class="nav-link" data-page="reports"><span class="nav-icon">▥</span>Relatórios</button>
+          <button class="nav-link" data-page="settings"><span class="nav-icon">⚙</span>Configurações</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="demo-indicator"><span class="status-dot"></span>Banco de dados online</div>
+          <div class="user-card"><span class="avatar" id="user-avatar">MF</span><span class="user-identity"><strong id="user-name">Administrador</strong><small id="restaurant-name">Meu restaurante</small></span><button class="user-menu" data-action="logout" aria-label="Sair da conta">Sair</button></div>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobile-menu" aria-label="Abrir menu">☰</button>
+          <div class="breadcrumb"><span>Restaurante Central</span><span class="crumb-separator">/</span><strong id="page-name">Visão geral</strong></div>
+          <div class="topbar-actions">
+            <span class="today-label" id="today-label"></span>
+            <button class="button button-secondary button-small" data-action="export">Exportar dados</button>
+            <button class="button button-primary button-small" data-action="new-order">＋ Novo pedido</button>
+          </div>
+        </header>
+        <section class="page-content" id="page-content" aria-live="polite"></section>
+        <footer class="app-footer">MesaFlow · Dados protegidos na conta do restaurante · <span id="storage-label">Conectando ao servidor…</span></footer>
+      </main>
+    </div>
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <dialog class="app-dialog" id="app-dialog"></dialog>
+  </body>
+</html>
